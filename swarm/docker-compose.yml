@@ -1,11 +1,14 @@
 swarm1:
     image: izgnod/docker_in_docker_swarm:0.2
     env_file: ./.bashrc
+    privileged: true
 
 swarm2:
     image: izgnod/docker_in_docker_swarm:0.2
     env_file: ./.bashrc
+    privileged: true
 
 swarm3:
     image: izgnod/docker_in_docker_swarm:0.2
     env_file: ./.bashrc
+    privileged: true
