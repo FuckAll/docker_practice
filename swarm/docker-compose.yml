@@ -1,0 +1,10 @@
+swarm1:
+    image:
+
+blogb:
+    build: ./
+
+blogc:
+    build: ./web
+    expose:
+        - 9899
