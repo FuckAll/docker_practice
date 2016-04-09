@@ -1,11 +1,11 @@
 swarm1:
-    images: izgnod/docker_in_docker_swarm:0.1
+    image: izgnod/docker_in_docker_swarm:0.1
     env_file: ./bashrc
 
 swarm2:
-    images: izgnod/docker_in_docker_swarm:0.1
+    image: izgnod/docker_in_docker_swarm:0.1
     env_file: ./bashrc
 
 swarm3:
-    images: izgnod/docker_in_docker_swarm:0.1
+    image: izgnod/docker_in_docker_swarm:0.1
     env_file: ./bashrc
