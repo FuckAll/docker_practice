@@ -1,10 +1,8 @@
 swarm1:
-    image:
+    build: ./DockerFile
 
-blogb:
-    build: ./
+swarm2:
+    build: ./DockerFile
 
-blogc:
-    build: ./web
-    expose:
-        - 9899
+swarm3:
+    build: ./DockerFile
