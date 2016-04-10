@@ -1,17 +1,23 @@
-swarm1:
+swarm_node_1:
     image: izgnod/docker_in_docker_swarm:0.2
     env_file: ./.bashrc
     privileged: true
-    entrypoint: docker run -d  swarm join --addr=$(grep -E '[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*' /etc/hosts | grep -v '127' | awk '{print $1}'):2375 token://3908370cd2b81da4dd83eda49d393851
+    volumes:
+      - ./:/izgnod
+    working_dir: /izgnod
 
-swarm2:
+swarm_node_2:
     image: izgnod/docker_in_docker_swarm:0.2
     env_file: ./.bashrc
     privileged: true
-    entrypoint: docker run -d  swarm join --addr=$(grep -E '[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*' /etc/hosts | grep -v '127' | awk '{print $1}'):2375 token://3908370cd2b81da4dd83eda49d393851
+    volumes:
+      - ./:/izgnod
+    working_dir: /izgnod
 
-swarm3:
+swarm_manager:
     image: izgnod/docker_in_docker_swarm:0.2
     env_file: ./.bashrc
     privileged: true
-    entrypoint: docker run -d  swarm join --addr=$(grep -E '[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*' /etc/hosts | grep -v '127' | awk '{print $1}'):2375 token://3908370cd2b81da4dd83eda49d393851
+    volumes:
+      - ./:/izgnod
+    working_dir: /izgnod
